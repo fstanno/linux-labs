@@ -1,0 +1,8 @@
+==== Tue Apr 14 11:38:56 PM -03 2026 ====
+CPU:
+%Cpu(s):  0.0 us,  4.8 sy,  0.0 ni, 95.2 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MEMORY: 
+               total        used        free      shared  buff/cache   available
+Mem:           3.7Gi       1.1Gi       1.6Gi        41Mi       1.3Gi       2.6Gi
+Swap:          3.7Gi          0B       3.7Gi
+
