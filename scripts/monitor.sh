@@ -16,9 +16,23 @@ LOG_DIR="$BASE_DIR/logs"
 QUIET=false
 CUSTOM_LOG_FILE=""
 
+if [[ "$1" == "--help" ]]; then
+  echo "Uso:"
+  echo "  ./monitor.sh [--output nome.log] [--quiet]"
+  echo ""
+  echo "Opções:"
+  echo "  --output   Define nome do arquivo de log"
+  echo "  --quiet    Executa sem saída no terminal"
+  exit 0
+fi
+
 while [[ "$#" -gt 0 ]]; do
   case $1 in
     --output)
+      if [ -z "$2" ]; then
+	      echo "Erro: --output precisa de um nome de arquivo"
+	      exit 1
+      fi
       CUSTOM_LOG_FILE="$2"
       shift
       ;;
@@ -70,7 +84,7 @@ log_header() {
 
 log_cpu() {
   echo "CPU:"
-  top -bn1 | grep "Cpu(s)"
+  top -bn1 | grep - E "Cpu|CPU"
   echo ""
 }
 

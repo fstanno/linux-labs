@@ -55,6 +55,15 @@ chmod +x monitor.sh
 
 ---
 
+## Exemplos de uso
+
+```bash
+./monitor.sh
+./monitor.sh --output custom.log
+./monitor.sh --quiet
+
+---
+
 ## Exemplo de saída
 
 ```
