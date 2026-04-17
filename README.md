@@ -1,4 +1,3 @@
-
 # Linux Labs
 
 Projeto prático focado no desenvolvimento de habilidades em Linux voltadas para automação, monitoramento de sistema e suporte a ambientes de desenvolvimento.
@@ -34,14 +33,16 @@ linux-labs/
 
 ## Script: monitor.sh
 
-Script responsável por coletar informações do sistema e registrar em log.
+Script responsável por coletar métricas do sistema e registrar em arquivos de log para análise.
 
 ### Funcionalidades
 
 * Coleta de uso de CPU
 * Coleta de uso de memória
+* Coleta de uso de disco
 * Registro com timestamp
-* Geração de arquivo de log
+* Geração de arquivos de log
+* Execução com parâmetros via linha de comando
 
 ---
 
@@ -61,15 +62,33 @@ chmod +x monitor.sh
 ./monitor.sh
 ./monitor.sh --output custom.log
 ./monitor.sh --quiet
+```
+
+---
+
+## Parâmetros disponíveis
+
+* `--output <arquivo>` → define o nome do arquivo de log
+* `--quiet` → executa sem exibir saída no terminal
 
 ---
 
 ## Exemplo de saída
 
 ```
-==== Mon Apr 15 ====
-CPU: ...
-MEMORY: ...
+=================================
+DATE: Fri Apr 17
+HOST: ubuntu-VirtualBox
+=================================
+CPU:
+%Cpu(s):  4.8 us,  0.0 sy,  0.0 ni, 95.2 id ...
+
+MEMORY:
+Mem: ...
+
+DISK:
+Filesystem      Size  Used Avail Use% Mounted on
+...
 ```
 
 ---
@@ -85,7 +104,7 @@ MEMORY: ...
 ## Evoluções planejadas
 
 * Automatização da execução com cron
-* Inclusão de novas métricas (disco, processos, rede)
+* Inclusão de novas métricas (processos, rede)
 * Melhoria na estrutura e formatação dos logs
 * Criação de novos scripts de automação
 
@@ -94,4 +113,3 @@ MEMORY: ...
 ## Contexto
 
 Este projeto faz parte do desenvolvimento prático em Linux com foco em aplicação real no ambiente de desenvolvimento e operações, visando evolução para áreas como backend e DevOps.
-
